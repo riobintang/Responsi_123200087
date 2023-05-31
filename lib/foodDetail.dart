@@ -60,8 +60,6 @@ class _FoodDetailState extends State<FoodDetail> {
   }
 
   Widget _buildSuccessSection(AutoGenerate data) {
-    
-
     return _BuildDetailFood(data.meals!.first);
   }
 
@@ -72,11 +70,16 @@ class _FoodDetailState extends State<FoodDetail> {
         throw Exception('Could not launch $_url');
       }
     }
-    return Column(
+
+    return ListView(
       children: [
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         Text(data.strMeal!),
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         Center(
           child: Container(
             child: Image.network(
@@ -87,18 +90,60 @@ class _FoodDetailState extends State<FoodDetail> {
             height: 200,
           ),
         ),
-
         Text(
           "Category: " + data.strCategory,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 18),
         ),
         Text(
           "Area: " + data.strArea,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 18),
         ),
-        Text(data.strInstructions, style: TextStyle(fontSize: 15),),
-  
+        Text(
+          data.strInstructions,
+          style: TextStyle(fontSize: 15),
+        ),
+        ElevatedButton(
+          onPressed: _launchUrl,
+          child: Text('Lihat Youtube'),
+        ),
       ],
     );
+    // return Column(
+    //   children: [
+    //     SizedBox(
+    //       height: 20,
+    //     ),
+    //     Text(data.strMeal!),
+    //     SizedBox(
+    //       height: 20,
+    //     ),
+    //     Center(
+    //       child: Container(
+    //         child: Image.network(
+    //           data.strMealThumb,
+    //           alignment: Alignment.center,
+    //         ),
+    //         width: 200,
+    //         height: 200,
+    //       ),
+    //     ),
+    //     Text(
+    //       "Category: " + data.strCategory,
+    //       style: TextStyle(fontSize: 20),
+    //     ),
+    //     Text(
+    //       "Area: " + data.strArea,
+    //       style: TextStyle(fontSize: 20),
+    //     ),
+    //     Text(
+    //       data.strInstructions,
+    //       style: TextStyle(fontSize: 15),
+    //     ),
+    //     ElevatedButton(
+    //       onPressed: _launchUrl,
+    //       child: Text('Lihat Youtube'),
+    //     ),
+    //   ],
+    // );
   }
 }
