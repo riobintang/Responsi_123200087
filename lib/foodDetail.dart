@@ -76,7 +76,10 @@ class _FoodDetailState extends State<FoodDetail> {
         SizedBox(
           height: 20,
         ),
-        Text(data.strMeal!),
+        Text(
+          data.strMeal!,
+          textAlign: TextAlign.center,
+        ),
         SizedBox(
           height: 20,
         ),
@@ -92,19 +95,31 @@ class _FoodDetailState extends State<FoodDetail> {
         ),
         Text(
           "Category: " + data.strCategory,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 15),
+        ),
+        SizedBox(
+          height: 10,
         ),
         Text(
           "Area: " + data.strArea,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 15),
+        ),
+        SizedBox(
+          height: 20,
         ),
         Text(
           data.strInstructions,
           style: TextStyle(fontSize: 15),
         ),
-        ElevatedButton(
-          onPressed: _launchUrl,
-          child: Text('Lihat Youtube'),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          width: 10,
+          child: ElevatedButton(
+            onPressed: _launchUrl,
+            child: Text('Lihat Youtube'),
+          ),
         ),
       ],
     );
